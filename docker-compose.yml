@@ -28,15 +28,6 @@ services:
       - traefik.http.routers.web1.entrypoints=web
       - traefik.http.routers.web1.rule=Host(`web1.local.es`)
 
-  web2:
-    image: nginx
-    container_name: web2
-    hostname: web2
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.web2.entrypoints=web
-      - traefik.http.routers.web2.rule=Host(`web2.local.es`)
-
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
